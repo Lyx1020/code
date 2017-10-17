@@ -1,0 +1,128 @@
+@import './normalize.less';
+@import './reset.less';
+@import './setting.less';
+
+
+@media screen and (width:375px){
+    html{
+        font-size: (375px/20);
+    }
+}
+@media screen and (width:320px){
+    html{
+        font-size: (320px/20);
+    }
+}
+@media screen and (width:360px){
+    html{
+        font-size: (360px/20);
+    }
+}
+@media screen and (width:412px){
+    html{
+        font-size: (412px/20);
+    }
+}
+@media screen and (width:768px){
+    html{
+        font-size: (768px/20);
+    }
+}
+@media screen and (width:1024px){
+    html{
+        font-size: (1024px/20);
+    }
+}
+
+html body{
+    width: 100%;
+    height: 100%;
+}
+.hk{
+    width: 100%;
+    height: 100%;
+}
+
+header{
+    width: 100%;
+    height: (88rem/32);
+    background-color: @headerColor;
+    line-height: (88rem/32);
+    position: relative;
+}
+header span{
+    font-size: (32rem/32);
+    color: @fontColor;
+    margin-left: (57rem/32);
+}
+header i{
+    position: absolute;
+    top: (28rem/32);
+    left: (20rem/32);
+    width: (20rem/32);
+    height: (32rem/32);
+    background: url(../image/back.png) no-repeat;
+    background-size: (20rem/32) (32rem/32);
+}
+
+main{
+    width: 100%;
+    padding: (24rem/32);
+    box-sizing: border-box;
+}
+.item{
+    width: 100%;   
+}
+.m-top{
+    width: 100%;
+    overflow: hidden;
+}
+main .m-top h2{
+    float: left;
+    font-size: (27rem/32);
+    height:(57rem/32);
+    margin-top: (28rem/32);
+    font-weight: normal;
+
+}
+main .m-top span{
+    float: right;
+    font-size: (24rem/32);
+    height:(52rem/32);
+    margin-top: (32rem/32);
+    color: @borderColor;
+
+}
+main .m-di{
+    width: 100%;
+    height: (220rem/32);
+    border: 3px dashed @mColor;
+    box-sizing: border-box;
+    background-color: @mBg;
+    background-image: url(../image/add.png);
+    background-repeat: no-repeat;
+    background-size: (104rem/32) (104rem/32);
+    background-position: center (38rem/32);
+}
+main .m-di span{
+    display: block;
+    width: 100%;
+    // height: (56rem/32);
+    text-align: center;
+    line-height: (56rem/32);
+    margin-top: (140rem/32);
+    font-size: (26rem/32);
+    color: @mColor;
+}
+footer{
+    padding: (24rem/32);
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: (69rem/32);
+    color: @borderColor;
+    font-size: (24rem/32);
+}
+footer p{
+    margin-top: (18rem/32);
+}
+
