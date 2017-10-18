@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>boostrap</title>
+
+    <!-- Bootstrap -->
+    <link href="./lib/css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        /* .banxin {
+            width: 980px;
+            height: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+        } */
+
+        body {
+            height: 2000px;
+        }
+
+        .topnav {
+            height: 40px;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .qrcode,
+        .service,
+        .extra {
+            border-right: 1px solid #333;
+        }
+
+        .qrcode a,
+        .service a,
+        .extra a,
+        .json a {
+            color: #000;
+        }
+
+        .btn-default.signup {
+            background-color: red;
+            color: #fff;
+            border-color: transparent;
+            padding: 3px 4px;
+        }
+
+        .signup.btn-default:active:focus {
+            background-color: red;
+            color: #fff;
+            border-color: transparent;
+        }
+
+        .wjs-nav {
+            height: 80px;
+            background-color: #f8f8f8;
+        }
+
+        .navbar-default {
+            width: 100%;
+            border: none;
+        }
+
+        .navbar-nav li {
+            margin-top: 17px;
+        }
+
+        .navbar-toggle {
+            margin-top: 22px;
+            margin-right: 22px;
+        }
+
+        .carousel-inner .item a {
+            display: block;
+            width: 100%;
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            vertical-align: middle;
+        }
+
+        .paidui {
+            padding: 30px 0;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .paidui i {
+            margin-right: 5px;
+        }
+
+        .paidui a {
+            color: #ff0000;
+        }
+
+        .nav-tabs li a {
+            padding: 15px 45px;
+
+            box-sizing: border-box;
+            color: #000;
+        }
+
+        .tab-content .item {
+            width: 100%;
+            height: 190px;
+            margin-top: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .item .item-left {
+            width: 100%;
+            height: 100%;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .item-left h2 {
+            font-size: 22px;
+            text-align: center;
+            margin-left: -50px;
+
+        }
+
+        .item-left ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            line-height: 25px;
+        }
+
+        .item-left ul li:nth-child(1) {
+            float: left;
+        }
+
+        .item-left ul li:nth-child(2) {
+            float: right;
+            padding-right: 80px;
+            box-sizing: border-box;
+        }
+
+
+        .item .item-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height:190px;
+            margin-top: 30px;
+            border-left: 1px dashed #333;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .item .item-right:before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            width: 16px;
+            height: 16px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 2px 1px 0px #fff;
+        }
+
+        .item .item-right:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: -8px;
+            width: 16px;
+            height: 16px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 -2px 1px 0px #ccc;
+        }
+        .item .item-right p{
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .item .item-right p:nth-child(1){
+            margin-top: 65px;
+        }
+        .tab-content .row .col-md-4:nth-child(2) .item{
+            position: relative;
+            background-color: pink;
+        }
+        .tab-content .row .col-md-4:nth-child(2) .item .item-right{
+           margin-top: -2px;
+        }
+        .tab-content .row .col-md-4:nth-child(2) .item>i{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 46px;
+            height: 46px;
+            background-image: url("./images/novice.png");
+            background-repeat: no-repeat;
+            background-size: 46px 46px;
+        }
+
+        .tab-pane {
+            background-color: #fff;
+            padding-top: 10px;
+        }
+    </style>
+
+
+</head>
+
+
+<body>
+    <div class="topnav hidden-sm hidden-xs ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 qrcode">
+                    <i class="glyphicon glyphicon-phone"></i>
+                    <a href="javascript:;">手机微金所</a>
+                    <i class="glyphicon glyphicon-menu-down"></i>
+                </div>
+                <div class="col-md-5 service">
+                    <i class="glyphicon glyphicon-phone-alt"></i>
+                    <a href="javascript:;">4006-89-4006（服务时间：9:00-21:00)</a>
+                </div>
+                <div class="col-md-2 extra">
+                    <a href="javascript:;">常见问题</a>
+                    <a href="javascript:;">财富登陆</a>
+                </div>
+                <div class="col-md-3 json">
+                    <a class="btn btn-default signup" href="#" role="button">免费注册</a>
+                    <a href="javascript:;">登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wjs-nav">
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                        aria-expanded="false">
+                        <!-- <span class="sr-only">Toggle navigation</span> -->
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img src="./images/logo.png" alt="">
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#">我要投资</a>
+                        </li>
+                        <li>
+                            <a href="#">我要借款</a>
+                        </li>
+                        <li>
+                            <a href="#">平台介绍</a>
+                        </li>
+                        <li>
+                            <a href="#">新手专区</a>
+                        </li>
+                        <li>
+                            <a href="#">动态介绍</a>
+                        </li>
+                        <li>
+                            <a href="#">微动态</a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" class="visible-md visible-lg">个人中心</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </div>
+
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        </ol>
+
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+
+                <a href="#" class="hidden-xs">
+                    <img src="./images/slide_01_2000x410.jpg" alt="...">
+                </a>
+
+                <a href="#" class="hidden-lg hidden-md hidden-sm">
+                    <img src="./images/slide_01_640x340.jpg" alt="...">
+                </a>
+
+            </div>
+            <div class="item">
+                <a href="#" class="hidden-xs">
+                    <img src="./images/slide_02_2000x410.jpg" alt="...">
+                </a>
+                <a href="#" class="hidden-lg hidden-md hidden-sm">
+                    <img src="./images/slide_02_640x340.jpg" alt="...">
+                </a>
+            </div>
+            <div class="item">
+                <a href="#" class="hidden-xs">
+                    <img src="./images/slide_03_2000x410.jpg" alt="...">
+                </a>
+                <a href="#" class="hidden-lg hidden-md hidden-sm">
+                    <img src="./images/slide_03_640x340.jpg" alt="...">
+                </a>
+            </div>
+            <div class="item">
+                <a href="#" class="hidden-xs">
+                    <img src="./images/slide_04_2000x410.jpg" alt="...">
+                </a>
+                <a href="#" class="hidden-lg hidden-md hidden-sm">
+                    <img src="./images/slide_04_640x340.jpg" alt="...">
+                </a>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="paidui">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="pull-left">
+                        <i class="glyphicon glyphicon-time"></i>现在有273人在排队,累计预约交易成功7571次.什么是预约投标?
+                        <a href="#">立即预约</a>
+                    </div>
+                    <div class="pull-right hidden-xs">
+                        <i class="glyphicon glyphicon-camera"></i>微金所企业宣传片
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tabbb">
+        <div class="container">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#home" aria-controls="home" role="tab" data-toggle="tab">特别推荐</a>
+                </li>
+                <li role="presentation">
+                    <a href="#profile" data-toggle="tab">微融资</a>
+                </li>
+                <li role="presentation">
+                    <a href="#messages" data-toggle="tab">微小宝</a>
+                </li>
+                <li role="presentation">
+                    <a href="#settings" data-toggle="tab">微消费</a>
+                </li>
+                <li role="presentation">
+                    <a href="#settings" data-toggle="tab">微增利</a>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 col-xs-12 col-sm-6" >
+                                <div class="item">
+                                    <div class="item-left">
+                                        <h2>
+                                            <a href="javascript:;">新手体验</a>
+                                        </h2>
+                                        <ul>
+                                            <li>起投金额</li>
+                                            <li>起投金额</li>
+                                        </ul>
+                                        <ul>
+                                            <li>0.01万</li>
+                                            <li>0.01万</li>
+                                        </ul>
+                                        <ul>
+                                            <li>借款期限</li>
+                                            <li>借款期限</li>
+                                        </ul>
+                                        <ul>
+                                            <li>10天</li>
+                                            <li>10天</li>
+                                        </ul>
+                                    </div>
+                                    <div class="item-right">
+                                        <p>8</p>
+                                        <p>年利率</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-xs-12 col-sm-6">
+                                <div class="item">
+                                    <i></i>
+                                    <div class="item-left">
+                                        <h2>
+                                            <a href="javascript:;">新手体验</a>
+                                        </h2>
+                                        <ul>
+                                            <li>起投金额</li>
+                                            <li>起投金额</li>
+                                        </ul>
+                                        <ul>
+                                            <li>0.01万</li>
+                                            <li>0.01万</li>
+                                        </ul>
+                                        <ul>
+                                            <li>借款期限</li>
+                                            <li>借款期限</li>
+                                        </ul>
+                                        <ul>
+                                            <li>10天</li>
+                                            <li>10天</li>
+                                        </ul>
+                                    </div>
+                                    <div class="item-right">
+                                        <p>8</p>
+                                        <p>年利率</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-xs-12 col-sm-6">
+                                <div class="item">
+                                    <div class="item-left">
+                                        <h2>
+                                            <a href="javascript:;">新手体验</a>
+                                        </h2>
+                                        <ul>
+                                            <li>起投金额</li>
+                                            <li>起投金额</li>
+                                        </ul>
+                                        <ul>
+                                            <li>0.01万</li>
+                                            <li>0.01万</li>
+                                        </ul>
+                                        <ul>
+                                            <li>借款期限</li>
+                                            <li>借款期限</li>
+                                        </ul>
+                                        <ul>
+                                            <li>10天</li>
+                                            <li>10天</li>
+                                        </ul>
+                                    </div>
+                                    <div class="item-right">
+                                        <p>8</p>
+                                        <p>年利率</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-xs-12 col-sm-6">
+                                <div class="item">
+                                    <div class="item-left">
+                                        <h2>
+                                            <a href="javascript:;">新手体验</a>
+                                        </h2>
+                                        <ul>
+                                            <li>起投金额</li>
+                                            <li>起投金额</li>
+                                        </ul>
+                                        <ul>
+                                            <li>0.01万</li>
+                                            <li>0.01万</li>
+                                        </ul>
+                                        <ul>
+                                            <li>借款期限</li>
+                                            <li>借款期限</li>
+                                        </ul>
+                                        <ul>
+                                            <li>10天</li>
+                                            <li>10天</li>
+                                        </ul>
+                                    </div>
+                                    <div class="item-right">
+                                        <p>8</p>
+                                        <p>年利率</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="profile">2</div>
+                <div class="tab-pane" id="messages">3</div>
+                <div class="tab-pane" id="settings">4</div>
+                <div class="tab-pane" id="settings">5</div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="./js/jQuery.min.js"></script>
+    <script src="./lib/js/bootstrap.min.js"></script>
+</body>
+
+</html>
